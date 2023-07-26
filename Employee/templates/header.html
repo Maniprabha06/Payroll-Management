@@ -1,0 +1,203 @@
+{% load static %}
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management</title>
+    <link rel="icon" href="{% static 'images/pay3.jpg' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:wght@300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #4070f4; */
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    /* padding-top: 100px; */
+    padding-bottom: 40px;
+    /* padding-left: 20%; */
+}
+
+:root {
+    --green: #27ae60;
+    --black: #192a56;
+    --light-color: #666;
+    --pink: #ff3355;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+*{
+    font-family: 'Nunito',sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+section{
+    padding: 2rem 9%;
+}
+section:nth-child(even){
+    background: #eee;
+}
+.sub-heading{
+    text-align: center;
+    color: var(--pink);
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+.heading{
+    text-align: center;
+    color: var(--black);
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--pink);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+.btn:hover{
+    background: var(--green);
+    letter-spacing: .1rem;
+}
+
+header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background: #fff;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+header .logo{
+    color: var(--pink);
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+header .logo i{
+    color: var(--black);
+}
+
+header .navbar a{
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color: var(--black);
+}
+header .navbar a.active,
+header .navbar a:hover{
+    color: #fff;
+    background: var(--pink);
+}
+
+header .icons i,header .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+
+header .icons i:hover,header .icons a:hover{
+    color: #fff;
+    background: var(--pink);
+    transform: rotate(360deg);
+}
+
+header .icons #menu-bars{
+    display: none;
+}
+
+@media(max-width:991px){
+
+html{
+    font-size: 55%;
+}
+
+header{
+    padding: 1rem 2rem;
+}
+section{
+    padding: 2rem;
+}
+}
+@media(max-width:768px){
+header .icons #menu-bars{
+    display: inline-block;
+}
+header .navbar{
+    position: absolute;
+    top:100%; left:0; right:0;
+    background: #fff;
+    border-top: .1rem solid rgbs(0,0,0,.2);
+    border-bottom: .1rem solid rgbs(0,0,0,.2);
+    padding: 1rem;
+    clip-path: polygon(0 0,100% 0,100% 0,0 0);
+}
+header .navbar.active{
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+}
+header .navbar a{
+    display:block;
+    padding: 1.5rem;
+    margin: 1rem;
+    font-size: 2rem;
+    background: #eee;
+}
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><i class="fa-solid fa-hands-bubbles"></i> Payroll Management system!</a>
+
+        <nav class="navbar">
+            <a class="active" href="{% url 'header' %}">Home</a>
+            <a href="{% url 'abtus' %}">about us</a>
+            <a href="{% url 'cntus' %}">contact</a>
+        </nav>
+        <div class="icons">
+            <a href="{% url 'log' %}" class="fas fa-user"></a>
+        </div>
+    </header>
+</body>
+</html>

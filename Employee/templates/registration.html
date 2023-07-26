@@ -1,0 +1,475 @@
+  {% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:wght@300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    --green: #27ae60;
+    --black: #192a56;
+    --light-color: #666;
+    --pink: #ff3355;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+*{
+    font-family: 'Nunito',sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+section{
+    padding: 2rem 9%;
+}
+section:nth-child(even){
+    background: #eee;
+}
+.sub-heading{
+    text-align: center;
+    color: var(--pink);
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+.heading{
+    text-align: center;
+    color: var(--black);
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--pink);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+.btn:hover{
+    background: var(--green);
+    letter-spacing: .1rem;
+}
+
+header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background: #fff;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+header .logo{
+    color: var(--pink);
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+header .logo i{
+    color: var(--black);
+}
+
+header .navbar a{
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color: var(--black);
+}
+header .navbar a.active,
+header .navbar a:hover{
+    color: #fff;
+    background: var(--pink);
+}
+
+header .icons i,header .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+
+header .icons i:hover,header .icons a:hover{
+    color: #fff;
+    background: var(--pink);
+    transform: rotate(360deg);
+}
+
+header .icons #menu-bars{
+    display: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #4070f4; */
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    /* padding-top: 100px; */
+    padding-bottom: 40px;
+    /* padding-left: 20%; */
+}
+.rmbk{
+    padding-top: 10%;
+    padding-left: 5%;
+}
+.container{
+    /* position: relative; */
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    /* padding-top: 30px; */
+    margin: 0 15px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+}
+.pay{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+.container header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #265df2;
+}
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: #ffffff;
+}
+.container form .details{
+    margin-top: 30px;
+}
+.container form .details.parent{
+    margin-top: 10px;
+}
+.container form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.container form .field{
+    display: flex;
+    align-items: center;
+     justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .field .choosehostel{
+
+    width: calc(100% / 3 - 15px);
+     flex-direction: column;
+     margin: 4px 0;
+}
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+     border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin:8px 0
+}
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field input[type="date"]:valid{
+    color: #333;
+}
+.container form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #ffffffbc;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #4070f4;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+form button:hover{
+    background-color: #265df2;
+}
+form button i{
+    margin: 0 6px;
+}
+.btnText a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+@media(max-width:991px){
+
+html{
+    font-size: 55%;
+}
+
+header{
+    padding: 1rem 2rem;
+}
+section{
+    padding: 2rem;
+}
+}
+@media(max-width:768px){
+header .icons #menu-bars{
+    display: inline-block;
+}
+header .navbar{
+    position: absolute;
+    top:100%; left:0; right:0;
+    background: #fff;
+    border-top: .1rem solid rgbs(0,0,0,.2);
+    border-bottom: .1rem solid rgbs(0,0,0,.2);
+    padding: 1rem;
+    clip-path: polygon(0 0,100% 0,100% 0,0 0);
+}
+header .navbar.active{
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+}
+header .navbar a{
+    display:block;
+    padding: 1.5rem;
+    margin: 1rem;
+    font-size: 2rem;
+    background: #eee;
+}
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: var(--pink);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><i class="fa-solid fa-hands-bubbles"></i> Payroll Management system!</a>
+
+        <nav class="navbar">
+             <a  href="{% url 'loggedin' %}">Home</a>
+            <div class="dropdown">
+            <a class="active">employee management</a>
+                <div class="dropdown-content">
+                        <a href="{% url 'registration' %}">Add Employee</a>
+                        <a href="{% url 'test' %}">Employee records</a>
+                    </div>
+                </div>
+            <div class="dropdown">
+            <a>payment management</a>
+            <div class="dropdown-content">
+                        <a href="{% url 'AddPay' %}">Add Pay</a>
+                        <a href="{% url 'Pay' %}">Pay records</a>
+                    </div>
+                </div>
+            <a href="{% url 'header' %}">logout</a>
+
+        </nav>
+        <div class="icons">
+            <a href="file:///D:/WT/pubstore/publog.html" class="fas fa-user"></a>
+        </div>
+    </header>
+    <div class="rmbk">
+        <div class="container">
+            <div class="pay">ADD EMPLOYEE <i class="fas fa-users"></i></div>
+            <form method="POST" action="{% url 'registration' %}" >
+                {% csrf_token %}
+                <div class="form first">
+                    <div class="details personal">
+
+
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>First Name</label>
+                                <input type="text" placeholder="Enter your firstname" name="FirstName" required >
+                            </div>
+
+                            <div class="input-field">
+                                <label>Middle Name</label>
+                                <input type="text" placeholder="Enter your middlename" name="MiddleName" required>
+                            </div>
+
+
+                            <div class="input-field">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Enter lastname" name="LastName" required>
+                            </div>
+                            <div class="input-field">
+                                <label>Date of birth</label>
+                                <input type="date" placeholder="Enter birth date" name="DOB" required>
+                            </div>
+                            <div class="input-field">
+                                <label>Gender</label>
+                                <input type="text" placeholder="Enter your gender" name="Gender" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Mobile Number</label>
+                                <input type="text" placeholder="Enter mobilenumber" name="Mobile" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Address</label>
+                                <input type="text" placeholder="Enter address" name="Address" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Pincode</label>
+                                <input type="text" placeholder="Enter Pincode" name="Pincode" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Nationality</label>
+                                <input type="text" placeholder="Enter nationality" name="Nationality" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="details parent">
+
+
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>User Name</label>
+                                <input type="text" placeholder="Enter your username" name="UserName" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Password</label>
+                                <input type="password" placeholder="Enter your password" name="Password" required>
+                            </div>
+
+
+                            <div class="input-field">
+                                <label>Confirm Password</label>
+                                <input type="password" placeholder="Enter confirmpassword" name="ConfirmPass" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>E-Mail</label>
+                                <input type="text" placeholder="Enter your emailid" name="Email" required>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                            <button class="submitbtn" type="submit">
+                                <span class="btnText">Submit</span>
+                                <i class="uil uil-navigator"></i>
+                            </button>
+
+
+
+
+                        </div>
+            </form>
+
+                </div>
+
+        </div>
+
+</body>
+</html>
+    {% endblock %}
